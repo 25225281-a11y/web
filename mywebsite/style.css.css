@@ -1,0 +1,209 @@
+/* =========================
+   カラーテーマ（ソフトパープル）
+========================= */
+:root {
+  --primary: #8b7cf0;        /* メインの紫 */
+  --primary-soft: #c9c4ff;   /* 薄い紫 */
+  --bg: #faf9ff;             /* 全体背景 */
+  --paper: #ffffff;          /* カード背景 */
+  --text: #2a2438;           /* 文字色（黒すぎない） */
+  --muted: #7a7390;
+  --border: #e6e3f5;
+  --shadow: 0 6px 20px rgba(120, 110, 200, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+   全体
+========================= */
+body {
+  font-family: "Helvetica Neue", "Hiragino Sans", sans-serif;
+  line-height: 1.8;
+  color: var(--text);
+  background: linear-gradient(180deg, #f6f4ff, var(--bg));
+  max-width: 920px;
+  margin: 32px auto;
+  padding: 0 18px;
+}
+
+h1, h2, h3 {
+  line-height: 1.35;
+  color: #3a2f66;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.85;
+}
+
+.small { font-size: 12px; }
+.muted { color: var(--muted); }
+
+/* =========================
+   ヘッダー
+========================= */
+.site-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: var(--paper);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.tagline {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   ヒーロー
+========================= */
+.hero {
+  margin-top: 22px;
+  padding: 28px;
+  background: linear-gradient(135deg, #ece9ff, #ffffff);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, var(--primary), #a69cff);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(120, 110, 200, 0.3);
+}
+
+/* =========================
+   セクション
+========================= */
+.section {
+  margin-top: 26px;
+  padding: 22px;
+  background: var(--paper);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.lead {
+  font-size: 16px;
+}
+
+/* =========================
+   2カラム（自己紹介）
+========================= */
+.two-col {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.profile-box {
+  background: linear-gradient(180deg, #f7f6ff, #ffffff);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.profile {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+}
+
+/* =========================
+   制作物カード
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: var(--paper);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(120, 110, 200, 0.18);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.link {
+  font-weight: 600;
+}
+
+/* =========================
+   スキル（チップ）
+========================= */
+.chips {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chips li {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f0eeff, #ffffff);
+  color: #4b3fa3;
+  font-size: 13px;
+  box-shadow: 0 4px 10px rgba(120, 110, 200, 0.15);
+}
+
+/* =========================
+   フッター
+========================= */
+.site-footer {
+  margin: 28px 0 36px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* =========================
+   スマホ対応
+========================= */
+@media (max-width: 720px) {
+  body {
+    margin: 16px auto;
+  }
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
